@@ -11,14 +11,14 @@
         <ul class="flex items-center justify-center w-full gap-2 mt-10 sm:justify-start sm:mt-0 sm:w-auto">
             <li>
                 <a href="https://github.com/benjamincrozat" target="_blank" rel="nofollow noopener noreferrer" class="underline decoration-white/30 underline-offset-4">
-                    <x-icon-github class="w-8 h-8 fill-current" />
+                    <x-icon-github-alt class="w-8 h-8 fill-current" />
                     <span class="sr-only">GitHub</span>
                 </a>
             </li>
 
             <li>
                 <a href="https://twitter.com/benjamincrozat" target="_blank" rel="nofollow noopener noreferrer" class="underline decoration-white/30 underline-offset-4">
-                    <x-icon-twitter class="w-8 h-8 fill-current" />
+                    <x-icon-twitter-alt class="w-8 h-8 fill-current" />
                     <span class="sr-only">Twitter</span>
                 </a>
             </li>

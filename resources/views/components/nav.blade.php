@@ -90,9 +90,9 @@
                         Horizon
                     </x-menu-item>
 
-                    <x-menu-item href="/nova">
-                        <x-icon-nova class="w-5 h-5 translate-y-[.5px] -mr-1" />
-                        Nova
+                    <x-menu-item href="/admin">
+                        <x-heroicon-o-light-bulb class="w-5 h-5 -mr-1 text-orange-400" />
+                        Filament
                     </x-menu-item>
                 </x-menu>
             @endauth

@@ -3,15 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use App\Models\Traits\IsFilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
-    use HasFactory, Notifiable;
+    use HasFactory, IsFilamentUser, Notifiable;
 
     /**
      * @var array<int, string>
@@ -54,5 +57,19 @@ class User extends Authenticatable
         return Attribute::make(
             fn () => Str::markdown($this->description ?? '')
         )->shouldCache();
+    }
+
+    public function githubUrl() : Attribute
+    {
+        return Attribute::make(
+            fn () => 'https://github.com/' . $this->github_handle
+        );
+    }
+
+    public function twitterUrl() : Attribute
+    {
+        return Attribute::make(
+            fn () => 'https://twitter.com/' . $this->twitter_handle
+        );
     }
 }

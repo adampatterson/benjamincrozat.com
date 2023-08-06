@@ -10,10 +10,10 @@
         "algolia/algoliasearch-client-php": "^3.3",
         "blade-ui-kit/blade-heroicons": "^2.1",
         "embed/embed": "^4.4",
+        "filament/filament": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.0",
         "laravel/horizon": "^5.19",
-        "laravel/nova": "^4.26",
         "laravel/prompts": "^0.1.1",
         "laravel/scout": "^9.8",
         "laravel/tinker": "^2.8",
@@ -42,6 +42,7 @@
         "nunomaduro/laravel-mojito": "^0.2.10",
         "pestphp/pest": "^2.9",
         "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-livewire": "^2.1",
         "phpunit/phpunit": "^10.0",
         "spatie/laravel-horizon-watcher": "^1.0",
         "spatie/laravel-ignition": "^2.0",
@@ -62,11 +63,11 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan nova:publish"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
